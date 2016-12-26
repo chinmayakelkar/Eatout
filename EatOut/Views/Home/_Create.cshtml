@@ -1,0 +1,63 @@
+﻿@model EatOut.Models.RestaurantModel
+
+@Html.ValidationSummary(false)
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="RestaurantName">Restaurant Name</label>
+            @Html.TextBoxFor(model => model.RestaurantName, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address)
+            @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+        </div>
+    
+    </div>
+ </div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="CuisineType" >Cuisine Type</label>
+            @Html.TextBoxFor(model => model.CuisineType, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone)
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.State)
+                @Html.TextBoxFor(model => model.State, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.City)
+                @Html.TextBoxFor(model => model.City, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Pin)
+                @Html.TextBoxFor(model => model.Pin, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+   
+
+   
+
+

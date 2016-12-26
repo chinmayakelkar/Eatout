@@ -1,0 +1,51 @@
+﻿/* validation errors */
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+    .validation-summary-errors ul {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+        .validation-summary-errors ul li {
+            color: #a94442;
+        }
+
+.form-control.input-validation-error {
+    border-color: #a94442 !important;
+}
+
+/* form controls & common */
+label {
+    font-size: 13px !important;
+}
+
+.form-control {
+    font-size: 13px !important;
+}
+
+.form-control-block {
+    height: auto !important;
+}
+
+/* table */
+.table thead tr th {
+    text-transform: uppercase;
+}
+
+.table tbody tr td .btn:last-child {
+    margin-right: 0;
+}
+
+.table tbody .nodata {
+    color: #a94442;
+    margin: 0;
+}

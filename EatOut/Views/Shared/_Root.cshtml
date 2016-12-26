@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    Layout = "~/views/shared/_roothead.cshtml";
+}
+<div class="app">
+@if (Request.IsAuthenticated) { 
+    @Html.Partial("Aside")
+}
+    <div id="content" class="app-content" role="main">
+        <div class="box">
+            @Html.Partial("Header")
+            <div class="box-row">
+                <div class="box-cell">
+                    <div class="box-inner padding">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+@section styles{
+    @RenderSection("styles", required: false)
+}
+@section scripts{
+    @RenderSection("scripts", required: false)
+}

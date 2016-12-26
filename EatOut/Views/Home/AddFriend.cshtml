@@ -1,0 +1,34 @@
+﻿@model EatOut.Models.UserListModel
+
+@{
+    ViewBag.SelectedMenu = "Add Friend";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div>
+                    <div class=" card">
+                        <div class="card-body">
+                            <div class="col-sm-6">
+                                <div class="icon mdi-action-account-circle i-20" style="padding: 20px 0;">
+                                    <h2>Add Friend</h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card-body card-body01">
+                                    <button class="md-btn md-raised pull-right p-h-md green waves-effect waves-effect inline" md-ink-ripple="">Save</button>&nbsp;
+                                    <a class="md-btn md-raised pull-right p-h-md blue waves-effect waves-effect inline" md-ink-ripple="" href="/home/userslist">Back</a>
+                                </div>
+                            </div>
+
+                            @Html.Partial("_addFriend", Model)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

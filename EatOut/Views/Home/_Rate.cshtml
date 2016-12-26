@@ -1,0 +1,45 @@
+﻿@model EatOut.Models.RestResult
+
+@Html.ValidationSummary(false)
+
+@Html.HiddenFor(model => model.RestaurantID)
+@Html.HiddenFor(model=>model.RestaurantName)
+@Html.HiddenFor(model=>model.Phone)
+@Html.HiddenFor(model=>model.Address)
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="RestaurantName">Restaurant Name</label>
+            @Html.DisplayFor(model => model.RestaurantName, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address)
+            @Html.DisplayFor(model => model.Address, new { @class = "form-control" })
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone)
+            @Html.DisplayFor(model => model.Phone, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rating)
+            @Html.TextBoxFor(model => model.Rating, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+
+
+

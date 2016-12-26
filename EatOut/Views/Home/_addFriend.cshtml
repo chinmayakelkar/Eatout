@@ -1,0 +1,44 @@
+﻿@model EatOut.Models.UserListModel
+
+@Html.ValidationSummary(false)
+
+@Html.HiddenFor(model => model.UserID)
+@Html.HiddenFor(model => model.FirstName)
+@Html.HiddenFor(model => model.LastName)
+@Html.HiddenFor(model => model.Email)
+@*@Html.HiddenFor(model=> model.isFriend)*@
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            @Html.DisplayFor(model => model.FirstName, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            @Html.DisplayFor(model => model.LastName, new { @class = "form-control" })
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email)
+            @Html.DisplayFor(model => model.Email, new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        @Html.CheckBoxFor(model => model.isFriend, new { @checked = Model.isFriend }) @Html.DisplayNameFor(m => m.isFriend)
+    </div>
+</div>
+
+
+
+

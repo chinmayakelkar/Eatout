@@ -1,0 +1,72 @@
+﻿@model  EatOut.Models.UserListModel
+@{
+    ViewBag.Title = "List";
+}
+
+<div class=" card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon mdi-action-account-circle i-20"></i>
+                            <span class="caption-subject font-blue-sharp bold uppercase">Friends</span>
+                        </div>
+                        @*<div class="actions">
+                            <a href="/home/create" class="md-btn md-raised pull-right p-h-md green waves-effect waves-effect inline">
+                                <i class="fa fa-plus"></i>
+                                <span class="hidden-480">New Restaurant</span>
+                            </a>
+                        </div>*@
+                    </div>
+                    <div class="portlet-body">
+                        <div class="search-box form-inline" style="text-align:right">
+                            
+                            @using (Html.BeginForm("UsersList", "Home", FormMethod.Post, new { id = "frm_rest" })) { 
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.FirstName, new { @class = "sr-only" })
+                                    @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.FirstName)})
+
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.LastName, new { @class = "sr-only" })
+                                    @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.LastName)})
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Email, new { @class = "sr-only" })
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.Email)})
+                                </div>
+                                <button id="btn-search" type="submit" class="md-btn md-raised p-h-md blue waves-effect waves-effect inline" md-ink-ripple="">Search</button>
+                            }
+                        </div>
+                        <div class="table-container">
+                            <table class="table table-striped table-bordered table-hover table-agenda" id="datatable_ajax">
+                                <thead>
+                                    <tr role="row" class="heading">
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th class="actions">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/content/pages/scripts/Friends.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        Friends.init();
+    });
+    </script>
+}
